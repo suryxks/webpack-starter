@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ESLintPlugin = require('eslint-webpack-plugin');
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const pkg = require("./package.json");
 module.exports = {
     mode:'development',
     entry: {
@@ -12,8 +14,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title:'Webpack Starter'
-        })
+            title: 'Webpack Starter',
+            template: path.resolve(__dirname, "src", "index.html")
+        }),
+        new BundleAnalyzerPlugin({
+			analyzerMode: pkg.analyze ? "server" : "disabled",
+			openAnalyzer: pkg.analyze ? true : false,
+			generateStatsFile: pkg.analyze ? true : false,
+			excludeAssets: null,
+        }),
+       
     ],
     output: {
         filename: '[name].[contenthash].js',

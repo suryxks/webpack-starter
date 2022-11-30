@@ -1,3 +1,11 @@
-.hello {
-    color: red;
-  }
+.container{
+  width: 400px;
+  margin: auto;
+  margin-top: 40vh;
+}
+.content{
+  color: royalblue;
+}
+.info{
+  color: red;
+}

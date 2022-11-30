@@ -6,8 +6,7 @@
         {
           "runtime": "automatic"
         }
-      ],
-      "@babel/preset-typescript"
+      ]
     ],
     "plugins": [
       [
@@ -15,6 +14,10 @@
         {
           "regenerator": true
         }
-      ]
+      ],
+      ["@babel/plugin-transform-modules-commonjs", {
+        "allowTopLevelThis": true
+      }]
     ]
   }
+  
