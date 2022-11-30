@@ -20,12 +20,12 @@ The tool kit provides the following features:
 ---------------------------------------------------------------------------------
 
 1.  `git clone https://github.com/suryxks/webpack-starter.git`
-2.  `cd Webpack-starter-kit`
+2.  `cd webpack-starter`
 3.  Run `npm install`
 
 You can also use the following command to get this template - `degit https://github.com/suryxks/webpack-starter`
 
-[](https://github.com/suryxks/webpack-startert#how-does-the-toolkit-implement-caching)How does the toolkit implement caching?
+[](https://github.com/suryxks/webpack-starter#how-does-the-toolkit-implement-caching)How does the toolkit implement caching?
 --------------------------------------------------------------------------------------------------------------------------------------
 
 The toolkit provides caching functionalities which are implemented in the following two ways:
@@ -41,7 +41,7 @@ The toolkit provides caching functionalities which are implemented in the follow
 
 -   By default, the toolkit splits and extracts third party `npm` libraries into `vendor` chunks as these are less likely to change than the source code of your app. This is done using the `cacheGroups` option of the [`SplitChunksPlugin`](https://webpack.js.org/plugins/split-chunks-plugin/) in [`webpack.common.js`](https://github.com/suryxks/webpack-starter/blob/main/webpack.common.js)
 
-[](https://github.comsuryxks/webpack-starter#running-on-development-using-dev-server)Running on development using dev server
+[](https://github.com/suryxks/webpack-starter#running-on-development-using-dev-server)Running on development using dev server
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 -   Run `npm start` to start Webpack dev server.
