@@ -5,7 +5,6 @@ module.exports = {
     mode:'development',
     entry: {
         index: './src/index.js',
-        print:'./src/print.js',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -17,10 +16,23 @@ module.exports = {
         })
     ],
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean:true,
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks:'all',
+              }
+          }
+        },
+        runtimeChunk: 'single',
+        moduleIds:'deterministic'
+      },
     module: {
         rules: [{
                 test: /\.css$/i,
@@ -33,7 +45,11 @@ module.exports = {
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type:'asset/resource',
-            }
+            },
+            {
+                test: /\.(js|jsx)$/,
+                use: 'babel-loader'
+              }
         ]
     }
 };

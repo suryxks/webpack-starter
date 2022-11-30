@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import './style.css';
 import Icon from './react-js-icon.svg';
-import printMe  from './print';
 function component() {
   const element = document.createElement('div');
   const btn = document.createElement('button');
@@ -10,7 +9,7 @@ function component() {
   element.classList.add('hello');
   
   btn.innerHTML = 'Click me and check the console';
-  btn.onclick = printMe;
+  
    // Add the image to our existing div.
   const myIcon = new Image();
   myIcon.src = Icon;
