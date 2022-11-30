@@ -1,5 +1,5 @@
 # Webpack-starter-kit
-===================
+
 
 A starter kit that you can use to create a project  with React, Caching, Code Splitting.
 
